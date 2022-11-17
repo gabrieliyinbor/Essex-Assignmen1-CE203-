@@ -1,7 +1,5 @@
 package Ex1;
 
-import Ex1.CE203_2018_Ex1;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,13 +46,13 @@ public class SetColor implements ActionListener {
             frame.displayInformation.setForeground(new Color(red, green, yellow));
             frame.repaint();
         } catch (NumberFormatException ex) {
-            if (red == 0) {
+            if (containsString(frame.textFieldRed.getText())) {
                 frame.textFieldRed.setText("");
             }
-            if (yellow == 0) {
+            if (containsString(frame.textFieldYellow.getText())) {
                 frame.textFieldYellow.setText("");
             }
-            if (green == 0) {
+            if (containsString(frame.textFieldGreen.getText())) {
                 frame.textFieldGreen.setText("");
             }
             frame.displayInformation.setText("Invalid Input");
@@ -64,5 +62,15 @@ public class SetColor implements ActionListener {
         }
 
 
+
+
+    }
+    public boolean containsString(String words){
+        for (int i = 0; i < 1; i++) {
+            if (Character.isLetter(words.charAt(0))){
+                return true;
+            }
+        }
+        return false;
     }
 }
