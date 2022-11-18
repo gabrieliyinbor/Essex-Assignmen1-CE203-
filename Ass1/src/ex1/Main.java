@@ -1,6 +1,4 @@
-package Ex1;
-
-import Ex1.CE203_2018_Ex1;
+package ex1;
 
 public class Main {
     public static void main(String[] args) {
