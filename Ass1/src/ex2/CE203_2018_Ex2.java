@@ -5,14 +5,14 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class CE203_2018_Ex2 extends JFrame {
-    public int width = 900;
+    public int width = 500;
     public int height = 400;
 
     public ArrayList<String> words = new ArrayList<>();
     private JPanel jPanelTop;
     private JPanel jPanelCenter;
     private JPanel jPanelBottom;
-    public JTextField enterWordInTextFied;
+    public JTextField enterWordInTextField;
     public JLabel displayInformation;
     public JButton jButtonAdd;
     public JButton jButtonDisplayAllWords;
@@ -24,7 +24,7 @@ public class CE203_2018_Ex2 extends JFrame {
 
     public CE203_2018_Ex2(){
         setSize(width,height);
-        jPanelTop = new JPanel(new GridLayout());
+        jPanelTop = new JPanel(new GridLayout(2,3));
         jPanelCenter = new JPanel(new GridLayout());
         jPanelBottom = new JPanel();
 
@@ -47,6 +47,7 @@ public class CE203_2018_Ex2 extends JFrame {
         jButtonDisplayAllWords.addActionListener(new ButtonHandler(this, 2));
         jButtonSearch.addActionListener(new ButtonHandler(this,3));
         jButtonRemove.addActionListener(new ButtonHandler(this,4));
+        jButtonRemoveAll.addActionListener(new ButtonHandler(this, 5));
         jButtonClear.addActionListener(new ButtonHandler(this,6));
 
         displayInformation = new JLabel("",SwingConstants.CENTER);
@@ -54,9 +55,9 @@ public class CE203_2018_Ex2 extends JFrame {
         jPanelCenter.add(displayInformation,BorderLayout.CENTER);
 
 
-        enterWordInTextFied = new JTextField(10);
+        enterWordInTextField = new JTextField(10);
         add(jPanelBottom, BorderLayout.SOUTH);
-        jPanelBottom.add(enterWordInTextFied);
+        jPanelBottom.add(enterWordInTextField);
 
     }
 
