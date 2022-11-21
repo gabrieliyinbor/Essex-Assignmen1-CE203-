@@ -75,12 +75,6 @@ public class ButtonHandler implements ActionListener {
                 }
             }
         }
-
-        if (action == 6) {
-            frame.words.clear();
-            frame.displayInformation.setText("ArrayList is cleared :(");
-        }
-
         if (action == 4) {
             try {
                 int lastOccurrence = frame.words.lastIndexOf(frame.enterWordInTextField.getText());
@@ -98,13 +92,18 @@ public class ButtonHandler implements ActionListener {
                 frame.displayInformation.setText("NOT FOUND");
                 frame.enterWordInTextField.setText("");
             } else {
-                frame.displayInformation.setText("All occurrences of '"+frame.enterWordInTextField.getText()+"' was removed successfully");
+                frame.displayInformation.setText("All occurrences of '" + frame.enterWordInTextField.getText() + "' was removed successfully");
                 frame.words.removeAll(Collections.singleton(frame.enterWordInTextField.getText()));
                 frame.enterWordInTextField.setText("");
 
             }
-
         }
+
+        if (action == 6) {
+            frame.words.clear();
+            frame.displayInformation.setText("ArrayList is cleared :(");
+        }
+
 
     }
 }
